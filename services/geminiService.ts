@@ -1,8 +1,6 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export interface LinkMetadata {
   description: string;
   category: string;
@@ -11,6 +9,15 @@ export interface LinkMetadata {
 
 export const suggestMetadata = async (url: string): Promise<LinkMetadata | null> => {
   try {
+    // Obtaining the key directly from the environment variable as per guidelines
+    const apiKey = process.env.API_KEY;
+    
+    if (!apiKey) {
+      console.warn("API_KEY is not defined in the environment.");
+      return null;
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `Analise a URL ${url} e sugira metadados profissionais para um hub corporativo. Retorne descrição, categoria e um nome de ícone da biblioteca Lucide (ex: Box, Globe, Shield, Terminal).`,
