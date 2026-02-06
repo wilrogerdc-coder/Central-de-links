@@ -101,7 +101,8 @@ export const INITIAL_CONFIG: AppConfig = {
   subtitle: 'Terminal de Comando Integrado',
   version: '3.3.0',
   credits: 'Desenvolvido por Intelligence Unit',
-  gasUrl: 'https://script.google.com/macros/s/AKfycby7dlbNYzLKVBNrmfdmB87yZFa1pJwPC2K_dFhFmwkF3dKKGUoG8FycErIwsdb_huk5/exec',
+  // Substitua a URL abaixo pela sua URL gerada no Google Apps Script
+  gasUrl: 'https://script.google.com/macros/s/AKfycbyCxhBFJZ-PqiY1bfLL7wQC9IA05ar8MkazctMU9HjrMYjyL3mEkceY8U22m1Kpob25/exec',
   showIcons: true,
   showDescriptions: true,
   showCategories: true,
